@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 body {
@@ -9,7 +10,6 @@ body {
     overflow-y:auto ;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    max-width: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -61,7 +61,7 @@ body::-webkit-scrollbar {
     min-height: 106vh;
     display: flex;
     align-items: center;
-    position: relative; 
+    position: relative;
 }
 
 .hero-section::after {
