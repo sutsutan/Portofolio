@@ -19,40 +19,45 @@
   <!-- navbar section -->
   <div class="navbar fixed-top" id="navbar">
     <div class="container">
-      <img src="assets/img/karina.jpg" alt="logo nya" width="75" class="rounded-circle" />
+      <img src="assets/img/karina.jpg" alt="logo nya" width="75" class="rounded-circle navbar-img" />
       <div class="d-flex" id="font_navbar">
         <div class="menu">
-          <a href="#home" class="p-4 text-decoration-none text-white navbar-menu">Home</a>
-          <a href="#profile" class="p-4 text-decoration-none text-white navbar-menu">Profile</a>
-          <a href="#skill" class="p-4 text-decoration-none text-white navbar-menu">Skill</a>
-          <a href="#experience" class="p-4 text-decoration-none text-white navbar-menu">Experience</a>
+          <a href="#home" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="home">Home</a>
+          <a href="#profile" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="profile">Profile</a>
+          <a href="#skill" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="skill">Skill</a>
+          <a href="#experience" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="experience">Experience</a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Hero section -->
-  <section class="hero-section" id="home">
+  <section class="hero-section reveal" id="home">
     <div class="container">
       <div class="row">
         <div class="col-7">
-          <div class="col-10 hero-text">
+          <div class="col-10 hero-text reveal">
             <p class="judul-atas">Sutan Bariq Rajabbani Pasai</p>
-            <p class="judul-bawah">Web Developer & UI/UX Designer</p>
+            <p class="judul-bawah typing-text"></p>
+            <button class="cta-btn reveal">Explore More About Me!</button>
           </div>
         </div>
       </div>
     </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
   </section>
+
   <!-- Profile section -->
   <div class="container-profile" id="profile">
     <div class="row">
       <div class="col-6">
-        <p class="mt-5 fw-bold" style="font-size: 35px">
+        <p class="mt-5 fw-bold reveal" style="font-size: 35px">
           About me
         </p>
         <div class="col">
-          <p class="mt-4" style="text-align: justify;">
+          <p class="mt-4 reveal" style="text-align: justify;">
             Halo nama saya Sutan, seorang web developer yang berfokus pada pembuatan website modern dan
             responsif. Saya suka memecahkan masalah lewat kode dan terus belajar teknologi baru untuk meningkatkan
             kemampuan saya.
@@ -60,8 +65,174 @@
             framework modern, saya berusaha menciptakan solusi digital yang fungsional dan menarik.
           </p>
         </div>
+      </div>
     </div>
   </div>
+
+  <!-- Skill section -->
+  <section class="skill-section" id="skill">
+    <div class="container">
+      <p class="fw-bold reveal" style="font-size: 35px; color: white;">Skills</p>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon">💻</div>
+          <h4>Frontend</h4>
+          <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🎨</div>
+          <h4>Design</h4>
+          <p>UI/UX, Figma</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience section (masi belom tau mau di isi apa) -->
+
+
+  <!-- Scroll to top button -->
+  <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+  <script>
+    // ========== SCROLL TO HOME ON REFRESH ==========
+    window.addEventListener('load', () => {
+        window.scrollTo(0, 0);
+    });
+
+    // ========== SMOOTH SCROLL NAVIGATION ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ========== NAVBAR SCROLL EFFECT ==========
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link-item');
+    const sections = document.querySelectorAll('section, div[id]');
+
+    window.addEventListener('scroll', () => {
+        // Add background to navbar on scroll
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Update active nav link
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // ========== TYPING EFFECT ==========
+    const typingText = document.querySelector('.typing-text');
+    const words = [
+        'Web Developer & UI/UX Designer',
+        'Creative Problem Solver',
+        'Design Lover',
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+            typingText.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingText.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let speed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            speed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            speed = 500;
+        }
+
+        setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+
+    // ========== SCROLL REVEAL ANIMATIONS ==========
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = Array.from(revealElements).indexOf(entry.target) * 0.1;
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, delay * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // ========== SCROLL TO TOP BUTTON ==========
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // ========== CTA BUTTON ==========
+    const ctaBtn = document.querySelector('.cta-btn');
+    if (ctaBtn) {
+        ctaBtn.addEventListener('click', () => {
+            document.querySelector('#skill').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+  </script>
 </body>
 
 </html>

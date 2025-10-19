@@ -5,45 +5,41 @@
     max-width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     overflow: auto;
-    overflow-y:auto ;
+    overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-.navbar-menu:hover{
-    border-radius: 5%;
-    text-shadow: 3px 3px 20px wheat !important;
+/* ========== REVEAL ANIMATION ========== */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
+/* ========== NAVBAR ========== */
 #navbar {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; 
-    background: transparent; 
-}
-
-#font_navbar a {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.navbar-menu:hover{
-    border-radius: 5%;
-    text-shadow: 3px 3px 20px rgb(255, 255, 255) !important;
+    z-index: 10;
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
@@ -52,6 +48,49 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(8px);
 }
 
+
+
+#font_navbar a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.navbar-menu {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.navbar-menu:hover::after,
+.navbar-menu.active::after {
+    width: 80%;
+}
+
+.navbar-menu:hover {
+    transform: translateY(-2px);
+}
+
+.navbar-img {
+    transition: all 0.3s ease;
+}
+
+.navbar-img:hover {
+    transform: scale(1.1);
+}
+
+/* ========== HERO SECTION ========== */
 .hero-section {
     background-color: #f8f9fa;
     background-image: linear-gradient(rgba(0, 0, 0, 0.286), rgba(0, 0, 0, 0.605)), url('assets/img/background-hero.jpg');
@@ -71,7 +110,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 250px;
-    background: linear-gradient(to bottom, 
+    background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 0.2) 25%,
         rgba(0, 0, 0, 0.5) 50%,
@@ -83,7 +122,7 @@ body::-webkit-scrollbar {
 }
 
 p {
-    font-family: "Poppins", "sans-serif"; 
+    font-family: "Poppins", "sans-serif";
     font-weight: 400;
     font-style: normal;
 }
@@ -97,29 +136,233 @@ p {
     margin-left: 10px;
     margin-bottom: 20px;
     position: relative;
-    z-index: 2; 
-}   
-    
+    z-index: 2;
+}
+
 .judul-atas {
     font-size: 32px;
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
     margin-bottom: 32px;
-}   
-    
+    transition: all 0.3s ease;
+}
+
 .judul-bawah {
     font-size: 25px;
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
     font-style: italic;
-}   
-
-.container-profile {
-    background-color:black;
-    color: wheat;
-    padding-left: 100px;
+    min-height: 2em;
 }
 
-html {
-    scroll-behavior: smooth;
+.typing-text::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    background-color: white;
+    margin-left: 0.2em;
+    animation: blink 0.7s infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.cta-btn {
+    background: linear-gradient(135deg, #000);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px #000;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px #fff;
+}
+
+.cta-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ========== SCROLL INDICATOR ========== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 24px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 12px;
+    position: relative;
+}
+
+.scroll-indicator span::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    animation: scroll-down 1.5s infinite;
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(12px);
+    }
+}
+
+/* ========== PROFILE SECTION ========== */
+.container-profile {
+    background-color: black;
+    color: wheat;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* ========== SKILL SECTION ========== */
+.skill-section {
+    background: #000;
+    padding: 80px 0;
+    color: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    background: wheat;
+    border-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.skill-card h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ========== EXPERIENCE SECTION ========== */
+
+
+/* ========== SCROLL TO TOP BUTTON ========== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .hero-text {
+        margin-right: 0;
+    }
+
+    .judul-atas {
+        font-size: 24px;
+    }
+
+    .judul-bawah {
+        font-size: 18px;
+    }
+
+    .container-profile {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .experience-timeline::before {
+        left: -10px;
+    }
+
+    .timeline-item {
+        margin-left: 20px;
+    }
+
+    .timeline-item::before {
+        left: -17px;
+    }
 }
