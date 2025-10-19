@@ -95,12 +95,12 @@
   <button class="scroll-to-top" id="scrollToTop">↑</button>
 
   <script>
-    // ========== SCROLL TO HOME ON REFRESH ==========
+    // SCROLL TO HOME ON REFRESH
     window.addEventListener('load', () => {
         window.scrollTo(0, 0);
     });
 
-    // ========== SMOOTH SCROLL NAVIGATION ==========
+    // SMOOTH SCROLL NAVIGATION
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -114,7 +114,7 @@
         });
     });
 
-    // ========== NAVBAR SCROLL EFFECT ==========
+    // NAVBAR SCROLL EFFECT
     const navbar = document.getElementById('navbar');
     const navLinks = document.querySelectorAll('.nav-link-item');
     const sections = document.querySelectorAll('section, div[id]');
@@ -144,7 +144,7 @@
         });
     });
 
-    // ========== TYPING EFFECT ==========
+    // TYPING EFFECT
     const typingText = document.querySelector('.typing-text');
     const words = [
         'Web Developer & UI/UX Designer',
@@ -183,7 +183,7 @@
 
     typeEffect();
 
-    // ========== SCROLL REVEAL ANIMATIONS ==========
+    // SCROLL REVEAL ANIMATIONS
     const revealElements = document.querySelectorAll('.reveal');
 
     const observerOptions = {
@@ -207,7 +207,7 @@
         observer.observe(element);
     });
 
-    // ========== SCROLL TO TOP BUTTON ==========
+    // SCROLL TO TOP BUTTON
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
     window.addEventListener('scroll', () => {
@@ -225,7 +225,7 @@
         });
     });
 
-    // ========== CTA BUTTON ==========
+    // CTA BUTTON
     const ctaBtn = document.querySelector('.cta-btn');
     if (ctaBtn) {
         ctaBtn.addEventListener('click', () => {
