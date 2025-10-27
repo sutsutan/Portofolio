@@ -16,16 +16,20 @@
 </head>
 
 <body>
-  <!-- navbar section -->
+  <!-- Navbar section -->
   <div class="navbar fixed-top" id="navbar">
     <div class="container">
       <img src="assets/img/karinalogo.jpeg" alt="logo nya" width="75" class="rounded-circle navbar-img" />
       <div class="d-flex" id="font_navbar">
         <div class="menu">
-          <a href="#home" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="home">Home</a>
-          <a href="#profile" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="profile">Profile</a>
-          <a href="#skill" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="skill">Skill</a>
-          <a href="#experience" class="p-4 text-decoration-none text-white navbar-menu nav-link-item" data-section="experience">Experience</a>
+          <a href="#home" class="p-4 text-decoration-none text-white navbar-menu nav-link-item"
+            data-section="home">Home</a>
+          <a href="#profile" class="p-4 text-decoration-none text-white navbar-menu nav-link-item"
+            data-section="profile">Profile</a>
+          <a href="#skill" class="p-4 text-decoration-none text-white navbar-menu nav-link-item"
+            data-section="skill">Skill</a>
+          <a href="#experience" class="p-4 text-decoration-none text-white navbar-menu nav-link-item"
+            data-section="experience">Experience</a>
         </div>
       </div>
     </div>
@@ -51,20 +55,22 @@
 
   <!-- Profile section -->
   <div class="container-profile" id="profile">
-    <div class="row">
-      <div class="col-6">
-        <p class="mt-5 fw-bold reveal" style="font-size: 35px">
+    <div class="row align-items-center">
+      <div class="col-md-5">
+        <img src="assets/img/About-me.jpg" alt="Profile" class="profile-image reveal rounded-4">
+      </div>
+      <div class="col-md-7">
+        <p class="fw-bold reveal" style="font-size: 35px">
           About me
         </p>
-        <div class="col">
-          <p class="mt-4 reveal" style="text-align: justify;">
-            Halo nama saya Sutan, seorang web developer yang berfokus pada pembuatan website modern dan
-            responsif. Saya suka memecahkan masalah lewat kode dan terus belajar teknologi baru untuk meningkatkan
-            kemampuan saya.
-            Saya percaya bahwa setiap baris kode punya cerita. Dengan pengalaman dalam HTML, CSS, JavaScript, dan
-            framework modern, saya berusaha menciptakan solusi digital yang fungsional dan menarik.
-          </p>
-        </div>
+        <p class="reveal" style="text-align: justify;">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.
+        </p>
       </div>
     </div>
   </div>
@@ -72,56 +78,27 @@
   <!-- Skill section -->
   <section class="skill-section" id="skill">
     <div class="container">
-      <p class="fw-bold reveal" style="font-size: 35px; color: white;">Skills</p>
-      <div class="skills-container reveal">
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">HTML & CSS</span>
-            <span class="skill-percent">90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="90"></div>
-          </div>
+      <p class="fw-bold reveal text-center" style="font-size: 35px; color: white;">Skills</p>
+      <div class="skills-logo-grid reveal">
+        <div class="skill-logo-item">
+          <img src="assets/img/html-logo.png" alt="HTML" class="skill-logo">
+          <p class="skill-logo-name">HTML</p>
         </div>
-
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">JavaScript</span>
-            <span class="skill-percent">65%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="65"></div>
-          </div>
+        <div class="skill-logo-item">
+          <img src="assets/img/css-logo.png" alt="CSS" class="skill-logo">
+          <p class="skill-logo-name">CSS</p>
         </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">UI/UX Design</span>
-            <span class="skill-percent">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="85"></div>
-          </div>
+        <div class="skill-logo-item">
+          <img src="assets/img/js-logo.jpeg" alt="JavaScript" class="skill-logo">
+          <p class="skill-logo-name">JavaScript</p>
         </div>
-
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Bootstrap</span>
-            <span class="skill-percent">88%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="88"></div>
-          </div>
+        <div class="skill-logo-item">
+          <img src="assets/img/bootstrap-logo.png" alt="Bootstrap" class="skill-logo">
+          <p class="skill-logo-name">Bootstrap</p>
         </div>
-
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Figma</span>
-            <span class="skill-percent">95%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="95"></div>
-          </div>
+        <div class="skill-logo-item">
+          <img src="assets/img/figma-logo.jpeg" alt="Figma" class="skill-logo">
+          <p class="skill-logo-name">Figma</p>
         </div>
       </div>
     </div>
@@ -130,27 +107,28 @@
   <!-- Experience section (masi belom tau mau di isi apa) -->
 
 
+
   <!-- Scroll to top button -->
   <button class="scroll-to-top" id="scrollToTop">↑</button>
 
   <script>
     // SCROLL TO HOME ON REFRESH
     window.addEventListener('load', () => {
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     });
 
     // SMOOTH SCROLL NAVIGATION
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     });
 
     // NAVBAR SCROLL EFFECT & ACTIVE LINK
@@ -158,45 +136,45 @@
     const navLinks = document.querySelectorAll('.nav-link-item');
 
     window.addEventListener('scroll', () => {
-        // Add background to navbar on scroll
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+      // Add background to navbar on scroll
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Update active nav link - lebih akurat
+      let current = '';
+
+      navLinks.forEach(link => {
+        const sectionId = link.getAttribute('data-section');
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (window.pageYOffset >= sectionTop - 100 &&
+            window.pageYOffset < sectionTop + sectionHeight - 100) {
+            current = sectionId;
+          }
         }
+      });
 
-        // Update active nav link - lebih akurat
-        let current = '';
-        
-        navLinks.forEach(link => {
-            const sectionId = link.getAttribute('data-section');
-            const section = document.getElementById(sectionId);
-            
-            if (section) {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                
-                if (window.pageYOffset >= sectionTop - 100 && 
-                    window.pageYOffset < sectionTop + sectionHeight - 100) {
-                    current = sectionId;
-                }
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('data-section') === current) {
-                link.classList.add('active');
-            }
-        });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === current) {
+          link.classList.add('active');
+        }
+      });
     });
 
     // TYPING EFFECT
     const typingText = document.querySelector('.typing-text');
     const words = [
-        'Web Developer & UI/UX Designer',
-        'Creative Problem Solver',
-        'Junior Designer',
+      'Web Developer & UI/UX Designer',
+      'Creative Problem Solver',
+      'Junior Designer',
     ];
 
     let wordIndex = 0;
@@ -204,103 +182,80 @@
     let isDeleting = false;
 
     function typeEffect() {
-        const currentWord = words[wordIndex];
+      const currentWord = words[wordIndex];
 
-        if (isDeleting) {
-            typingText.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typingText.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-        }
+      if (isDeleting) {
+        typingText.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
 
-        let speed = isDeleting ? 50 : 100;
+      let speed = isDeleting ? 50 : 100;
 
-        if (!isDeleting && charIndex === currentWord.length) {
-            speed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            speed = 500;
-        }
+      if (!isDeleting && charIndex === currentWord.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 500;
+      }
 
-        setTimeout(typeEffect, speed);
+      setTimeout(typeEffect, speed);
     }
 
     typeEffect();
- 
+
     // SCROLL REVEAL ANIMATIONS
     const revealElements = document.querySelectorAll('.reveal');
 
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = Array.from(revealElements).indexOf(entry.target) * 0.1;
-                setTimeout(() => {
-                    entry.target.classList.add('active');
-                }, delay * 100);
-                observer.unobserve(entry.target);
-            }
-        });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = Array.from(revealElements).indexOf(entry.target) * 0.1;
+          setTimeout(() => {
+            entry.target.classList.add('active');
+          }, delay * 100);
+          observer.unobserve(entry.target);
+        }
+      });
     }, observerOptions);
 
     revealElements.forEach(element => {
-        observer.observe(element);
+      observer.observe(element);
     });
-
-    // SKILL PROGRESS BAR ANIMATION
-    const skillProgressBars = document.querySelectorAll('.skill-progress');
-    let animationTriggered = false;
-
-    function animateProgressBars() {
-        const skillSection = document.getElementById('skill');
-        const sectionTop = skillSection.offsetTop;
-        const sectionHeight = skillSection.offsetHeight;
-
-        if (window.pageYOffset >= sectionTop - 300 && 
-            window.pageYOffset < sectionTop + sectionHeight && 
-            !animationTriggered) {
-            
-            skillProgressBars.forEach(bar => {
-                const progress = bar.getAttribute('data-progress');
-                bar.style.width = progress + '%';
-            });
-            animationTriggered = true;
-        }
-    }
-
-    window.addEventListener('scroll', animateProgressBars);
 
     // SCROLL TO TOP BUTTON
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            scrollToTopBtn.classList.add('visible');
-        } else {
-            scrollToTopBtn.classList.remove('visible');
-        }
+      if (window.scrollY > 500) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
     });
 
     scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
 
     // CTA BUTTON
     const ctaBtn = document.querySelector('.cta-btn');
     if (ctaBtn) {
-        ctaBtn.addEventListener('click', () => {
-            document.querySelector('#skill').scrollIntoView({ behavior: 'smooth' });
-        });
+      ctaBtn.addEventListener('click', () => {
+        document.querySelector('#skill').scrollIntoView({ behavior: 'smooth' });
+      });
     }
   </script>
 </body>
