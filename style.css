@@ -187,6 +187,8 @@ p {
 .cta-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 20px #fff;
+    background: #fff;
+    color: #000;
 }
 
 .cta-btn:active {
