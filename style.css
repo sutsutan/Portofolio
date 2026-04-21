@@ -14,6 +14,11 @@ body {
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    background-image: url('assets/img/background-hero.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body::-webkit-scrollbar {
@@ -90,11 +95,7 @@ body::-webkit-scrollbar {
 
 /* ========== HERO SECTION ========== */
 .hero-section {
-    background-color: #f8f9fa;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.286), rgba(0, 0, 0, 0.605)), url('assets/img/background-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.2);
     min-height: 106vh;
     display: flex;
     align-items: center;
@@ -111,9 +112,9 @@ body::-webkit-scrollbar {
     background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 0.2) 25%,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0.8) 75%,
-        rgba(0, 0, 0, 1) 100%
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 75%,
+        rgba(0, 0, 0, 0.75) 100%
     );
     pointer-events: none;
     z-index: 1;
@@ -239,7 +240,7 @@ p {
 
 /* ========== PROFILE SECTION ========== */
 .container-profile {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding-left: 100px;
     padding-right: 100px;
@@ -263,7 +264,7 @@ p {
 
 /* ========== SKILL SECTION ========== */
 .skill-section {
-    background: #000;
+    background: rgba(0, 0, 0, 0.82);
     padding: 80px 0;
     color: white;
 }
@@ -296,8 +297,8 @@ p {
 .skill-logo-item:hover {
     transform: translateY(-15px) scale(1.05);
     background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(239, 207, 144, 0.8);
-    box-shadow: 0 15px 40px rgba(239, 207, 144, 0.3);
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 15px 40px rgba(126, 187, 231, 0.5);
 }
 
 .skill-logo {
@@ -305,13 +306,13 @@ p {
     height: 80px;
     object-fit: contain;
     margin-bottom: 15px;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 4px 10px rgba(126, 187, 231, 0.3));
     transition: all 0.3s ease;
 }
 
 .skill-logo-item:hover .skill-logo {
     transform: scale(1.1);
-    filter: drop-shadow(0 6px 15px rgba(239, 207, 144, 0.5));
+    filter: drop-shadow(0 6px 15px rgba(144, 209, 239, 0.5));
 }
 
 .skill-logo-name {
@@ -325,7 +326,7 @@ p {
 
 /* ========== EXPERIENCE SECTION ========== */
 .experience-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.88) 100%);
     padding: 80px 0;
     color: white;
 }
@@ -384,7 +385,7 @@ p {
     font-weight: 600;
     font-size: 1.4rem;
     margin-bottom: 8px;
-    color: rgb(239, 207, 144);
+    color: rgb(255, 255, 255);
 }
 
 .experience-date {
@@ -408,10 +409,10 @@ p {
 
 /* ========== FOOTER SECTION ========== */
 .footer-section {
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.95) 100%);
     color: white;
     padding: 60px 0 20px;
-    border-top: 2px solid rgba(239, 207, 144, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .footer-col {
@@ -423,7 +424,7 @@ p {
     font-weight: 600;
     font-size: 1.3rem;
     margin-bottom: 20px;
-    color: rgb(239, 207, 144);
+    color: rgb(255, 255, 255);
 }
 
 .footer-col p {
