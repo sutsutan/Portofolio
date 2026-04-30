@@ -15,7 +15,7 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     background-image: url('assets/img/background-hero.jpeg');
-    background-size: cover;
+    background-size: 110%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -171,25 +171,26 @@ p {
 }
 
 .cta-btn {
-    background: linear-gradient(135deg, #000);
+    background: rgba(255, 255, 255, 0.05);
     color: white;
-    border: none;
     padding: 12px 30px;
     font-size: 16px;
-    border: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
     margin-top: 20px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px #fff;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(126, 187, 231, 0.2);
 }
 
 .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px #fff;
-    background: #fff;
-    color: #000;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 30px rgba(126, 187, 231, 0.5);
+    color: white;
 }
 
 .cta-btn:active {
@@ -349,7 +350,7 @@ p {
 
 .experience-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(239, 207, 144, 0.3);
+    box-shadow: 0 15px 40px rgba(126, 187, 231, 0.5);
 }
 
 .experience-img {
@@ -450,7 +451,7 @@ p {
 }
 
 .footer-links a:hover {
-    color: rgb(239, 207, 144);
+    color: rgb(126, 187, 231);
     padding-left: 10px;
 }
 
